@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1XTKSE1WL7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1XTKSE1WL7');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <title>PPI COMMITTEE</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgknoLG26yQzq-esjpd2dO0jyhlibaQJQXsZk6qXt68LH7eODrjcI8tQEQxCumhta-dHx1LZkvB2Lg7S-YJuA3XmUtgCpqju6tXarVI3OIz7YKa5rX1HEue19ZaAUaxpQ5ymEMNpo5B5LgyRZ27wnekrsUDZnjaeH5C5OaHnjA45gauZinFHll3IGASJlzC/s16000/Desain_tanpa_judul-removebg-preview.png">
+
+  <!-- Link ke manifest.json -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000" id="meta-theme-color">
+
+  <style>
+    :root {
+      --bg-light: #ffffff;
+      --text-light: #111;
+      --bg-dark: #000000;
+      --text-dark: #eee;
+      --accent: #00a859;
+      --toggle-size: 56px;
+      --toggle-padding: 12px;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Container iframe */
+    .app-frame {
+      flex: 1 1 auto;
+      display: block;
+      width: 100%;
+      height: calc(100vh - 0px);
+      border: none;
+    }
+
+    /* Install button */
+    #installButton {
+      position: fixed;
+      left: 16px;
+      bottom: 20px;
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 14px;
+      cursor: pointer;
+      display: none;
+      z-index: 1200;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    }
+
+    /* Floating theme toggle */
+    .theme-toggle {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: var(--toggle-size);
+      height: var(--toggle-size);
+      border-radius: 50%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(0,0,0,0.12));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1300;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+    .theme-toggle:active { transform: scale(0.96); }
+
+    /* Icon wrapper to animate rotation & morph */
+    .toggle-icon {
+      width: calc(var(--toggle-size) - var(--toggle-padding));
+      height: calc(var(--toggle-size) - var(--toggle-padding));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 450ms cubic-bezier(.2,.9,.2,1), opacity 300ms ease;
+      will-change: transform, opacity;
+    }
+
+    /* We'll use two SVGs (sun and moon) and toggle their opacity/transform */
+    .icon-sun, .icon-moon {
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      pointer-events: none;
+      transition: transform 450ms cubic-bezier(.2,.9,.2,1), opacity 300ms ease;
+    }
+
+    /* Active class controls which icon shows */
+    .theme-toggle.light .icon-sun { opacity: 1; transform: rotate(0deg) scale(1); }
+    .theme-toggle.light .icon-moon { opacity: 0; transform: rotate(-40deg) scale(0.6); }
+
+    .theme-toggle.dark .icon-sun { opacity: 0; transform: rotate(40deg) scale(0.6); }
+    .theme-toggle.dark .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
+
+    /* Minimal theme adjustments for body when switching */
+    body.light {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+    }
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    /* Small label when hovered (optional) */
+    .theme-toggle .hint {
+      position: absolute;
+      bottom: calc(var(--toggle-size) + 10px);
+      right: 0;
+      transform: translateX(0);
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      white-space: nowrap;
+      display: none;
+    }
+    .theme-toggle:hover .hint { display: block; }
+  </style>
+</head>
+<body>
+  <!-- Iframe utama -->
+  <iframe id="appIframe" class="app-frame" src="https://www.appsheet.com/start/fddf162d-c048-4ddc-ac12-8994cf340f7b?refresh=1" allowfullscreen allow="geolocation"></iframe>
+
+  <!-- Install button (muncul jika beforeinstallprompt tersedia) -->
+  <button id="installButton">Install Apps (safe)</button>
+
+  <!-- Theme toggle -->
+  <div id="themeToggle" class="theme-toggle dark" role="button" aria-label="Toggle theme" title="Toggle theme">
+    <div class="toggle-icon">
+      <!-- Sun SVG -->
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" fill="#FFDD57"/>
+        <g stroke="#FFDD57" stroke-width="1.6" stroke-linecap="round">
+          <path d="M12 2v2"/>
+          <path d="M12 20v2"/>
+          <path d="M4.93 4.93l1.41 1.41"/>
+          <path d="M17.66 17.66l1.41 1.41"/>
+          <path d="M2 12h2"/>
+          <path d="M20 12h2"/>
+          <path d="M4.93 19.07l1.41-1.41"/>
+          <path d="M17.66 6.34l1.41-1.41"/>
+        </g>
+      </svg>
+
+      <!-- Moon SVG -->
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="#cbd5e1"/>
+      </svg>
+    </div>
+    <div class="hint">Toggle Bright / Dark</div>
+  </div>
+
+  <script>
+  // --- Install prompt handling ---
+  let deferredPrompt;
+  const installButton = document.getElementById('installButton');
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installButton.style.display = 'inline-block';
+  });
+
+  installButton.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    installButton.style.display = 'none';
+    deferredPrompt.prompt();
+    const choice = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+  });
+
+  // --- Theme toggle logic ---
+  const toggle = document.getElementById('themeToggle');
+  const body = document.body;
+  const iframe = document.getElementById('appIframe');
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  // Links per tema
+  const LIGHT_URL = "https://www.appsheet.com/start/fddf162d-c048-4ddc-ac12-8994cf340f7b?refresh=1";
+  const DARK_URL  = "https://www.appsheet.com/start/fddf162d-c048-4ddc-ac12-8994cf340f7b?refresh=1";
+
+  function applyTheme(theme, isAuto = false) {
+    // Simpan preferensi hanya jika manual
+    if (!isAuto) localStorage.setItem('his_theme_manual', 'true');
+    if (!isAuto) localStorage.setItem('his_theme', theme);
+
+    if (theme === 'light') {
+      toggle.classList.remove('dark'); toggle.classList.add('light');
+      body.classList.remove('dark'); body.classList.add('light');
+      iframe.src = LIGHT_URL;
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else {
+      toggle.classList.remove('light'); toggle.classList.add('dark');
+      body.classList.remove('light'); body.classList.add('dark');
+      iframe.src = DARK_URL;
+      metaThemeColor.setAttribute('content', '#000000');
+    }
+  }
+
+  function detectSystemTheme() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  // --- Inisialisasi tema pertama kali ---
+  (function initTheme() {
+    const manual = localStorage.getItem('his_theme_manual');
+    const savedTheme = localStorage.getItem('his_theme');
+    const systemTheme = detectSystemTheme();
+
+    if (manual && savedTheme) {
+      applyTheme(savedTheme);
+    } else {
+      applyTheme(systemTheme, true);
+    }
+  })();
+
+  // --- Toggle manual ---
+  toggle.addEventListener('click', () => {
+    const current = localStorage.getItem('his_theme') || detectSystemTheme();
+    const next = current === 'light' ? 'dark' : 'light';
+    toggle.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.06)' }, { transform: 'scale(1)' }], { duration: 300 });
+    applyTheme(next);
+  });
+
+  // --- Jika sistem berubah tema (dan user belum pernah pilih manual), ikuti otomatis ---
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    const manual = localStorage.getItem('his_theme_manual');
+    if (!manual) {
+      const newTheme = e.matches ? 'dark' : 'light';
+      applyTheme(newTheme, true);
+    }
+  });
+
+  // --- Service worker registration ---
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('ServiceWorker registered', reg.scope))
+        .catch(err => console.warn('ServiceWorker failed', err));
+    });
+  }
+  </script>
+</body>
+  </html>
