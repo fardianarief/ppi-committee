@@ -1,0 +1,20 @@
+{
+  "name": "PPI COMMITTEE",
+  "short_name": "PPI COMMITTEE",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgknoLG26yQzq-esjpd2dO0jyhlibaQJQXsZk6qXt68LH7eODrjcI8tQEQxCumhta-dHx1LZkvB2Lg7S-YJuA3XmUtgCpqju6tXarVI3OIz7YKa5rX1HEue19ZaAUaxpQ5ymEMNpo5B5LgyRZ27wnekrsUDZnjaeH5C5OaHnjA45gauZinFHll3IGASJlzC/s16000/Desain_tanpa_judul-removebg-preview.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgknoLG26yQzq-esjpd2dO0jyhlibaQJQXsZk6qXt68LH7eODrjcI8tQEQxCumhta-dHx1LZkvB2Lg7S-YJuA3XmUtgCpqju6tXarVI3OIz7YKa5rX1HEue19ZaAUaxpQ5ymEMNpo5B5LgyRZ27wnekrsUDZnjaeH5C5OaHnjA45gauZinFHll3IGASJlzC/s16000/Desain_tanpa_judul-removebg-preview.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
