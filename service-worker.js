@@ -1,11 +1,11 @@
-const CACHE_NAME = "nurse-sync-cache-v1";
+const CACHE_NAME = "PCI-committee";
 const URLS_TO_CACHE = [
   "./",
   "./index.html",
   "./manifest.json",
   "./service-worker.js",
   // favicon/icon external (may or may not be cachable depending on CORS)
-  "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgknoLG26yQzq-esjpd2dO0jyhlibaQJQXsZk6qXt68LH7eODrjcI8tQEQxCumhta-dHx1LZkvB2Lg7S-YJuA3XmUtgCpqju6tXarVI3OIz7YKa5rX1HEue19ZaAUaxpQ5ymEMNpo5B5LgyRZ27wnekrsUDZnjaeH5C5OaHnjA45gauZinFHll3IGASJlzC/s16000/Desain_tanpa_judul-removebg-preview.png",
+  "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8vF4G9MiYO8xmmzHQibSEGMpfcunFFDRPdNDAS0qpZ4HmBhpCmoNcK1Y63V1pnHrZAaAua018VNWSxQc4iY9490PKL0EgJDCaUaDFO8lNozW4y4THv7M9FwRfmdu3ltIUl_qzdR7xJD5LFrJ4uwNu9qKLINZ1hip26spnDCklTsYRKjV_3SYXD3h88e9l/s224/logo-mayapada-hospital-group-909x909-2022-removebg-preview.png",
   // app iframe URLs (may be rejected by remote server for caching)
   "https://www.appsheet.com/start/fddf162d-c048-4ddc-ac12-8994cf340f7b?refresh=1",
   "https://www.appsheet.com/start/fddf162d-c048-4ddc-ac12-8994cf340f7b?refresh=1"
