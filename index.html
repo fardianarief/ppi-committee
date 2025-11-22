@@ -1,40 +1,116 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EHMZEPQ2TB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EHMZEPQ2TB');
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
   <title>PCI COMMITTEE</title>
-   <!-- Favicon -->
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8vF4G9MiYO8xmmzHQibSEGMpfcunFFDRPdNDAS0qpZ4HmBhpCmoNcK1Y63V1pnHrZAaAua018VNWSxQc4iY9490PKL0EgJDCaUaDFO8lNozW4y4THv7M9FwRfmdu3ltIUl_qzdR7xJD5LFrJ4uwNu9qKLINZ1hip26spnDCklTsYRKjV_3SYXD3h88e9l/s224/logo-mayapada-hospital-group-909x909-2022-removebg-preview.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8vF4G9MiYO8xmmzHQibSEGMpfcunFFDRPdNDAS0qpZ4HmBhpCmoNcK1Y63V1pnHrZAaAua018VNWSxQc4iY9490PKL0EgJDCaUaDFO8lNozW4y4THv7M9FwRfmdu3ltIUl_qzdR7xJD5LFrJ4uwNu9qKLINZ1hip26spnDCklTsYRKjV_3SYXD3h88e9l/s224/logo-mayapada-hospital-group-909x909-2022-removebg-preview.png">
-  <link rel="shortcut icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8vF4G9MiYO8xmmzHQibSEGMpfcunFFDRPdNDAS0qpZ4HmBhpCmoNcK1Y63V1pnHrZAaAua018VNWSxQc4iY9490PKL0EgJDCaUaDFO8lNozW4y4THv7M9FwRfmdu3ltIUl_qzdR7xJD5LFrJ4uwNu9qKLINZ1hip26spnDCklTsYRKjV_3SYXD3h88e9l/s224/logo-mayapada-hospital-group-909x909-2022-removebg-preview.png">
-  <link rel="apple-touch-icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8vF4G9MiYO8xmmzHQibSEGMpfcunFFDRPdNDAS0qpZ4HmBhpCmoNcK1Y63V1pnHrZAaAua018VNWSxQc4iY9490PKL0EgJDCaUaDFO8lNozW4y4THv7M9FwRfmdu3ltIUl_qzdR7xJD5LFrJ4uwNu9qKLINZ1hip26spnDCklTsYRKjV_3SYXD3h88e9l/s224/logo-mayapada-hospital-group-909x909-2022-removebg-preview.png">
-  <meta name="msapplication-TileImage" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8vF4G9MiYO8xmmzHQibSEGMpfcunFFDRPdNDAS0qpZ4HmBhpCmoNcK1Y63V1pnHrZAaAua018VNWSxQc4iY9490PKL0EgJDCaUaDFO8lNozW4y4THv7M9FwRfmdu3ltIUl_qzdR7xJD5LFrJ4uwNu9qKLINZ1hip26spnDCklTsYRKjV_3SYXD3h88e9l/s224/logo-mayapada-hospital-group-909x909-2022-removebg-preview.png">
-  <meta name="theme-color" content="#ffffff">
+
+  <!-- Link ke manifest.json -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000" id="meta-theme-color">
 
   <style>
+    :root {
+      --bg-light: #ffffff;
+      --text-light: #111;
+      --bg-dark: #000000;
+      --text-dark: #eee;
+      --accent: #00a859;
+      --toggle-size: 56px;
+      --toggle-padding: 12px;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      background-color: #000;
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
+
     body {
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
     }
-    iframe {
-      flex: 1;
-      border: none;
+
+    /* Container iframe */
+    .app-frame {
+      flex: 1 1 auto;
+      display: block;
       width: 100%;
+      height: calc(100vh - 0px);
+      border: none;
     }
+
+    /* Install button */
+    #installButton {
+      position: fixed;
+      left: 16px;
+      bottom: 20px;
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 14px;
+      cursor: pointer;
+      display: none;
+      z-index: 1200;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    }
+
   </style>
 </head>
 <body>
-  <iframe 
-    src="https://www.appsheet.com/start/fddf162d-c048-4ddc-ac12-8994cf340f7b?refresh=1"
-    allowfullscreen
-    allow="geolocation">
-  </iframe>
+  <!-- Iframe utama -->
+  <iframe id="appIframe" class="app-frame" src="https://www.appsheet.com/start/fddf162d-c048-4ddc-ac12-8994cf340f7b?refresh=1" allowfullscreen allow="geolocation"></iframe>
+
+  <!-- Install button (muncul jika beforeinstallprompt tersedia) -->
+  <button id="installButton">Install Apps (safe)</button>
+
+
+  <script>
+  // --- Install prompt handling ---
+  let deferredPrompt;
+  const installButton = document.getElementById('installButton');
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installButton.style.display = 'inline-block';
+  });
+
+  installButton.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    installButton.style.display = 'none';
+    deferredPrompt.prompt();
+    const choice = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+  });
+
+
+  // --- Service worker registration ---
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('ServiceWorker registered', reg.scope))
+        .catch(err => console.warn('ServiceWorker failed', err));
+    });
+  }
+  </script>
 </body>
-</html>
+  </html>
